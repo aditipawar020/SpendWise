@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Transactions - SpendWise</title>
+
+    <link rel="stylesheet" href="css/transactions.css">
+
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            SpendWise
+        </div>
+
+        <nav>
+
+            <a href="dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="transactions.html" class="active">
+                Transactions
+            </a>
+
+            <a href="budget.html">
+                Budget
+            </a>
+
+            <a href="savings.html">
+                Savings Goals
+            </a>
+
+            <a href="reports.html">
+                Reports
+            </a>
+
+            <a href="settings.html">
+                Settings
+            </a>
+
+        </nav>
+
+        <button id="logoutBtn" class="logout-btn">
+            Logout
+        </button>
+
+    </aside>
+
+
+    <!-- Main Content -->
+
+    <main class="main-content">
+
+        <header class="page-header">
+
+            <div>
+
+                <p class="small-title">
+                    MONEY MANAGEMENT
+                </p>
+
+                <h1>
+                    Transactions
+                </h1>
+
+                <p class="description">
+                    Add and manage your income and expenses.
+                </p>
+
+            </div>
+
+        </header>
+
+
+        <!-- Add Transaction -->
+
+        <section class="transaction-form-card">
+
+            <h2>
+                Add Transaction
+            </h2>
+
+            <form id="transactionForm">
+
+
+                <!-- Transaction Type -->
+
+                <div class="form-group">
+
+                    <label for="type">
+                        Transaction Type
+                    </label>
+
+                    <select id="type" required>
+
+                        <option value="">
+                            Select Type
+                        </option>
+
+                        <option value="Income">
+                            Income
+                        </option>
+
+                        <option value="Expense">
+                            Expense
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Amount -->
+
+                <div class="form-group">
+
+                    <label for="amount">
+                        Amount
+                    </label>
+
+                    <input
+                        type="number"
+                        id="amount"
+                        placeholder="Enter amount"
+                        min="0"
+                        step="0.01"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Category -->
+
+<div class="form-group">
+
+    <label for="category">
+        Category
+    </label>
+
+    <select id="category" required>
+
+        <option value="">
+            Select Category
+        </option>
+
+    </select>
+
+</div>
+
+
+                <!-- Description -->
+
+                <div class="form-group">
+
+                    <label for="description">
+                        Description
+                    </label>
+
+                    <input
+                        type="text"
+                        id="description"
+                        placeholder="e.g. Monthly salary / Zomato order"
+                    >
+
+                </div>
+
+
+                <!-- Payment Method -->
+
+                <div class="form-group">
+
+                    <label for="paymentMethod">
+                        Payment Method
+                    </label>
+
+                    <select id="paymentMethod" required>
+
+                        <option value="">
+                            Select Payment Method
+                        </option>
+
+                        <option value="Cash">
+                            Cash
+                        </option>
+
+                        <option value="UPI">
+                            UPI
+                        </option>
+
+                        <option value="Debit Card">
+                            Debit Card
+                        </option>
+
+                        <option value="Credit Card">
+                            Credit Card
+                        </option>
+
+                        <option value="Bank Transfer">
+                            Bank Transfer
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Date -->
+
+                <div class="form-group">
+
+                    <label for="transactionDate">
+                        Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="transactionDate"
+                        required
+                    >
+
+                </div>
+
+
+                <div id="transactionMessage"></div>
+
+
+                <button
+                    type="submit"
+                    class="submit-btn"
+                >
+                    Add Transaction
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- Transaction History -->
+
+        <section class="history-card">
+
+            <div class="history-header">
+
+                <h2>
+                    Transaction History
+                </h2>
+
+            </div>
+
+            <div class="transaction-filters">
+
+    <input
+        type="text"
+        id="searchTransaction"
+        placeholder="Search transactions..."
+    >
+
+    <select id="filterType">
+
+        <option value="all">
+            All Types
+        </option>
+
+        <option value="Income">
+            Income
+        </option>
+
+        <option value="Expense">
+            Expense
+        </option>
+
+    </select>
+
+
+    <select id="filterCategory">
+
+        <option value="all">
+            All Categories
+        </option>
+
+        <option value="Salary">Salary</option>
+        <option value="Food">Food</option>
+        <option value="Travel">Travel</option>
+        <option value="Shopping">Shopping</option>
+        <option value="Bills">Bills</option>
+        <option value="Entertainment">Entertainment</option>
+        <option value="Health">Health</option>
+        <option value="Education">Education</option>
+        <option value="Other">Other</option>
+
+    </select>
+
+
+    <select id="filterPayment">
+
+        <option value="all">
+            All Payment Methods
+        </option>
+
+        <option value="Cash">Cash</option>
+        <option value="UPI">UPI</option>
+        <option value="Debit Card">Debit Card</option>
+        <option value="Credit Card">Credit Card</option>
+        <option value="Bank Transfer">Bank Transfer</option>
+
+    </select>
+
+
+    <button
+        type="button"
+        id="clearFilters"
+        class="clear-filter-btn">
+        Clear Filters
+    </button>
+
+</div>
+            <div id="transactionList">
+
+                <p class="empty-message">
+                    No transactions yet.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="js/auth.js"></script>
+    <script src="js/transactions.js"></script>
+
+</body>
+
+</html>

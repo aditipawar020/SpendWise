@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Budget - SpendWise</title>
+
+    <link rel="stylesheet" href="css/budget.css">
+
+</head>
+
+<body>
+
+    <!-- ===============================
+         SIDEBAR
+    =============================== -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            SpendWise
+        </div>
+
+        <nav>
+
+            <a href="dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="transactions.html">
+                Transactions
+            </a>
+
+            <a href="budget.html" class="active">
+                Budget
+            </a>
+
+            <a href="savings.html">
+                Savings Goals
+            </a>
+
+            <a href="reports.html">
+                Reports
+            </a>
+
+            <a href="settings.html">
+                Settings
+            </a>
+
+        </nav>
+
+        <button id="logoutBtn" class="logout-btn">
+            Logout
+        </button>
+
+    </aside>
+
+
+    <!-- ===============================
+         MAIN CONTENT
+    =============================== -->
+
+    <main class="main-content">
+
+        <div class="page-header">
+
+            <div>
+                <h1>Budget</h1>
+
+                <p>
+                    Set and manage your monthly spending limit.
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- ===============================
+             BUDGET FORM
+        =============================== -->
+
+        <section class="budget-card">
+
+            <h2>Set Monthly Budget</h2>
+
+            <form id="budgetForm">
+
+                <div class="form-group">
+
+                    <label for="monthlyLimit">
+                        Monthly Spending Limit
+                    </label>
+
+                    <input
+                        type="number"
+                        id="monthlyLimit"
+                        placeholder="Enter amount"
+                        min="1"
+                        step="0.01"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="budgetMonth">
+                            Month
+                        </label>
+
+                        <select id="budgetMonth" required>
+
+                            <option value="1">January</option>
+                            <option value="2">February</option>
+                            <option value="3">March</option>
+                            <option value="4">April</option>
+                            <option value="5">May</option>
+                            <option value="6">June</option>
+                            <option value="7">July</option>
+                            <option value="8">August</option>
+                            <option value="9">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="budgetYear">
+                            Year
+                        </label>
+
+                        <select id="budgetYear" required>
+
+                            <option value="2026">2026</option>
+                            <option value="2027">2027</option>
+                            <option value="2028">2028</option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <button type="submit" class="save-btn">
+                    Save Budget
+                </button>
+
+                <p id="budgetMessage"></p>
+
+            </form>
+
+        </section>
+
+
+        <!-- ===============================
+             CURRENT BUDGET
+        =============================== -->
+
+        <section class="budget-card">
+
+            <h2>Current Budget</h2>
+
+            <div class="current-budget">
+
+                <div>
+
+                    <span>
+                        Monthly Limit
+                    </span>
+
+                    <strong id="currentBudget">
+                        ₹0.00
+                    </strong>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        Month
+                    </span>
+
+                    <strong id="currentMonth">
+                        -
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="js/auth.js"></script>
+    <script src="js/budget.js"></script>
+
+</body>
+
+</html>

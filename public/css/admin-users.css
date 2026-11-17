@@ -1,0 +1,433 @@
+/* ===============================
+   GENERAL
+================================ */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f7fb;
+    background-image:
+        linear-gradient(rgba(245, 247, 251, 0.68), rgba(245, 247, 251, 0.68)),
+        url("../images/spendwise-finance-bg.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #1f2937;
+}
+
+
+/* ===============================
+   SIDEBAR
+================================ */
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    width: 240px;
+    height: 100vh;
+
+    background: #111827;
+    color: white;
+
+    padding: 25px 18px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.admin-label {
+    font-size: 11px;
+    color: #9ca3af;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 25px;
+}
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sidebar nav a {
+    text-decoration: none;
+    color: #d1d5db;
+
+    padding: 12px 14px;
+
+    border-radius: 8px;
+
+    transition: 0.2s;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+    background: #2563eb;
+    color: white;
+}
+
+.logout-btn {
+    margin-top: auto;
+
+    border: none;
+
+    background: #dc2626;
+    color: white;
+
+    padding: 12px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+}
+
+.logout-btn:hover {
+    background: #b91c1c;
+}
+
+
+/* ===============================
+   MAIN CONTENT
+================================ */
+
+.main-content {
+    margin-left: 240px;
+    padding: 35px;
+}
+
+
+/* ===============================
+   TOPBAR
+================================ */
+
+.topbar {
+    margin-bottom: 30px;
+}
+
+.topbar h1 {
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.topbar p {
+    color: #6b7280;
+}
+
+
+/* ===============================
+   USERS CARD
+================================ */
+
+.users-card {
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+
+/* ===============================
+   CARD HEADER
+================================ */
+
+.card-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+.card-header h2 {
+    font-size: 21px;
+}
+
+
+/* ===============================
+   REFRESH BUTTON
+================================ */
+
+.refresh-btn {
+    border: none;
+
+    background: #2563eb;
+    color: white;
+
+    padding: 10px 18px;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+}
+
+.refresh-btn:hover {
+    background: #1d4ed8;
+}
+
+
+/* ===============================
+   TABLE
+================================ */
+
+.table-container {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 850px;
+}
+
+thead {
+    background: #f3f4f6;
+}
+
+th {
+    text-align: left;
+
+    padding: 14px;
+
+    font-size: 14px;
+
+    color: #374151;
+}
+
+td {
+    padding: 14px;
+
+    border-top: 1px solid #e5e7eb;
+
+    font-size: 14px;
+}
+
+
+/* ===============================
+   STATUS
+================================ */
+
+.status {
+    display: inline-block;
+
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+.status.pending {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.status.approved {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.status.rejected {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.status.deactivated {
+    background: #e5e7eb;
+    color: #374151;
+}
+
+
+/* ===============================
+   ACTION BUTTONS
+================================ */
+
+.action-btn {
+    border: none;
+
+    padding: 7px 11px;
+
+    margin-right: 5px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-size: 12px;
+}
+
+.approve-btn {
+    background: #16a34a;
+    color: white;
+}
+
+.reject-btn {
+    background: #dc2626;
+    color: white;
+}
+
+.deactivate-btn {
+    background: #6b7280;
+    color: white;
+}
+
+.activate-btn {
+    background: #2563eb;
+    color: white;
+}
+
+.action-btn:hover {
+    opacity: 0.85;
+}
+
+
+/* ===============================
+   EMPTY MESSAGE
+================================ */
+
+.empty-message {
+    text-align: center;
+
+    padding: 30px;
+
+    color: #6b7280;
+}
+
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 700px) {
+
+    .sidebar {
+        width: 200px;
+    }
+
+    .main-content {
+        margin-left: 200px;
+        padding: 20px;
+    }
+
+}
+/* =========================================================
+   SPENDWISE BLACK + WHITE PREMIUM FINANCE THEME
+   ========================================================= */
+body {
+    background: #0b0b0b !important;
+}
+
+/* Premium black finance sidebar */
+.sidebar {
+    background:
+        linear-gradient(rgba(8, 8, 8, 0.88), rgba(8, 8, 8, 0.94)),
+        url("../images/spendwise-finance-bg.png") center center / cover no-repeat !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Clean white application area */
+.main-content {
+    background: #f8f9fb !important;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+/* Keep page headers crisp against the white area */
+.main-content h1,
+.main-content h2,
+.main-content h3 {
+    color: #111827;
+}
+
+/* Subtle gold accent matching the finance background */
+.small-title,
+.page-header .small-title {
+    color: #b7791f;
+}
+
+/* Premium card edges */
+.summary-card,
+.chart-card,
+.report-card,
+.settings-card,
+.transaction-form-card,
+.history-card,
+.budget-card,
+.goal-form-card,
+.goals-card,
+.users-card,
+.transactions-card {
+    border: 1px solid #e7e7e7;
+}
+
+
+/* ===== SpendWise Login-Matching Button Theme ===== */
+button,
+.auth-button,
+.btn,
+button[type="submit"],
+button[type="button"],
+input[type="submit"] {
+    background: #182238 !important;
+    color: #ffffff !important;
+    border: 1px solid #182238 !important;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+button:hover,
+.auth-button:hover,
+.btn:hover,
+button[type="submit"]:hover,
+button[type="button"]:hover,
+input[type="submit"]:hover {
+    background: #111827 !important;
+    border-color: #b7791f !important;
+    color: #ffffff !important;
+}
+
+button:active,
+.auth-button:active,
+.btn:active,
+button[type="submit"]:active {
+    transform: translateY(1px);
+}
+
+/* Gold accents used on the login page */
+a {
+    color: #b7791f;
+}
+
+a:hover {
+    color: #8f5f16;
+}

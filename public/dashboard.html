@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard - SpendWise</title>
+
+    <link rel="stylesheet" href="css/dashboard.css">
+
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            SpendWise
+        </div>
+
+        <nav>
+
+            <a href="dashboard.html" class="active">
+                Dashboard
+            </a>
+
+            <a href="transactions.html">
+                Transactions
+            </a>
+
+            <a href="budget.html">
+                Budget
+            </a>
+
+            <a href="savings.html">
+                Savings Goals
+            </a>
+
+            <a href="reports.html">
+                Reports
+            </a>
+
+            <a href="settings.html">
+                Settings
+            </a>
+
+        </nav>
+
+        <button id="logoutBtn" class="logout-btn">
+            Logout
+        </button>
+
+    </aside>
+
+
+    <!-- Main Content -->
+
+    <main class="main-content">
+
+        <!-- Top Bar -->
+
+        <header class="topbar">
+
+            <div>
+
+                <p class="welcome-small">
+                    Welcome back
+                </p>
+
+                <h1 id="userName">
+                    User
+                </h1>
+
+            </div>
+
+            <div class="profile">
+
+                <div class="profile-circle">
+                    A
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- Summary Cards -->
+
+        <section class="summary-grid">
+
+            <div class="summary-card">
+
+                <p>Total Income</p>
+
+                <h2 id="totalIncome">
+                    ₹0
+                </h2>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <p>Total Expenses</p>
+
+                <h2 id="totalExpenses">
+                    ₹0
+                </h2>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <p>Total Savings</p>
+
+                <h2 id="totalSavings">
+                    ₹0
+                </h2>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <p>Remaining Budget</p>
+
+                <h2 id="remainingBudget">
+                    ₹0
+                </h2>
+
+            </div>
+
+        </section>
+
+
+        <!-- Charts -->
+
+        <section class="charts-section">
+
+            <!-- Income vs Expenses -->
+
+            <div class="chart-card">
+
+                <h2>
+                    Income vs Expenses
+                </h2>
+
+                <canvas id="incomeExpenseChart"></canvas>
+
+            </div>
+
+
+            <!-- Expenses by Category -->
+
+            <div class="chart-card">
+
+                <h2>
+                    Expenses by Category
+                </h2>
+
+                <canvas id="categoryChart"></canvas>
+
+            </div>
+
+        </section>
+
+
+        <!-- Budget Section -->
+
+        <section class="dashboard-grid">
+
+            <div class="dashboard-card">
+
+                <div class="card-header">
+
+                    <h2>
+                        Monthly Budget
+                    </h2>
+
+                </div>
+
+
+                <div class="budget-info">
+
+                    <h3 id="budgetAmount">
+                        ₹0
+                    </h3>
+
+                    <p>
+                        Budget limit
+                    </p>
+
+
+                    <div class="progress-bar">
+
+                        <div
+                            class="progress"
+                            id="budgetProgress">
+                        </div>
+
+                    </div>
+
+
+                    <p id="budgetText">
+                        No budget set
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Recent Transactions -->
+
+        <section class="dashboard-card transactions-card">
+
+            <div class="card-header">
+
+                <h2>
+                    Recent Transactions
+                </h2>
+
+                <a href="transactions.html">
+                    View All
+                </a>
+
+            </div>
+
+
+            <div id="transactionsList">
+
+                <p class="empty-message">
+                    No transactions yet.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Chart.js -->
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Login Protection -->
+
+    <script src="js/auth.js"></script>
+
+    <!-- Dashboard JavaScript -->
+
+    <script src="js/dashboard.js"></script>
+
+</body>
+
+</html>

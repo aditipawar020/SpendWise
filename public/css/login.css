@@ -1,0 +1,394 @@
+/* ================================
+   SpendWise Professional Login
+   ================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    min-height: 100vh;
+    background: #11100f;
+    color: #ffffff;
+}
+
+.auth-container {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+}
+
+/* ================================
+   LEFT SIDE - BUSINESS BACKGROUND
+   ================================ */
+
+.auth-info {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(10, 10, 10, 0.72),
+            rgba(10, 10, 10, 0.38)
+        ),
+        url("../images/spendwise-finance-bg.png");
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 45px 55px;
+}
+
+/* Dark overlay */
+
+.auth-info::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0, 0, 0, 0.60),
+            rgba(0, 0, 0, 0.18)
+        );
+
+    pointer-events: none;
+}
+
+/* Brand */
+
+.brand {
+    position: relative;
+    z-index: 2;
+
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+
+    color: #ffffff;
+}
+
+.info-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 570px;
+    margin-bottom: 70px;
+}
+
+.small-title {
+    color: #d7a84b;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.info-content h1 {
+    font-size: 56px;
+    line-height: 1.08;
+    font-weight: 700;
+    letter-spacing: -2px;
+    margin-bottom: 25px;
+}
+
+.info-content > p:last-child {
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 17px;
+    line-height: 1.7;
+    max-width: 500px;
+}
+
+/* ================================
+   RIGHT SIDE - LOGIN FORM
+   ================================ */
+
+.auth-form-container {
+    min-height: 100vh;
+
+    background: #f6f7f9;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px;
+}
+
+.auth-form {
+    width: 100%;
+    max-width: 430px;
+}
+
+.back-home {
+    display: inline-block;
+
+    margin-bottom: 55px;
+
+    color: #667085;
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    transition: 0.2s ease;
+}
+
+.back-home:hover {
+    color: #b0842f;
+}
+
+.auth-form h2 {
+    color: #172033;
+
+    font-size: 34px;
+    font-weight: 700;
+
+    margin-bottom: 10px;
+}
+
+.form-description {
+    color: #667085;
+
+    font-size: 15px;
+    margin-bottom: 35px;
+}
+
+/* ================================
+   FORM
+   ================================ */
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+
+    color: #344054;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    margin-bottom: 8px;
+}
+
+.form-group input {
+    width: 100%;
+
+    padding: 14px 15px;
+
+    border: 1px solid #d0d5dd;
+    border-radius: 8px;
+
+    background: #ffffff;
+
+    color: #172033;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.form-group input::placeholder {
+    color: #98a2b3;
+}
+
+.form-group input:focus {
+    border-color: #b0842f;
+
+    box-shadow:
+        0 0 0 3px rgba(176, 132, 47, 0.12);
+}
+
+/* ================================
+   LOGIN BUTTON
+   ================================ */
+
+.auth-button {
+    width: 100%;
+
+    border: none;
+    border-radius: 8px;
+
+    padding: 14px 18px;
+
+    background: #172033;
+    color: #ffffff;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.auth-button:hover {
+    background: #24304a;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 6px 18px rgba(23, 32, 51, 0.18);
+}
+
+.auth-button:active {
+    transform: translateY(0);
+}
+
+/* ================================
+   MESSAGE
+   ================================ */
+
+#loginMessage {
+    margin-bottom: 15px;
+
+    font-size: 14px;
+}
+
+/* ================================
+   ACCOUNT TEXT
+   ================================ */
+
+.account-text {
+    text-align: center;
+
+    margin-top: 28px;
+
+    color: #667085;
+
+    font-size: 14px;
+}
+
+.account-text a {
+    color: #a47729;
+
+    font-weight: 600;
+
+    text-decoration: none;
+}
+
+.account-text a:hover {
+    text-decoration: underline;
+}
+
+/* ================================
+   RESPONSIVE
+   ================================ */
+
+@media (max-width: 900px) {
+
+    .auth-container {
+        grid-template-columns: 1fr;
+    }
+
+    .auth-info {
+        min-height: 360px;
+        padding: 35px;
+    }
+
+    .info-content {
+        margin-bottom: 0;
+    }
+
+    .info-content h1 {
+        font-size: 42px;
+    }
+
+    .auth-form-container {
+        min-height: auto;
+        padding: 45px 30px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .auth-info {
+        min-height: 320px;
+        padding: 28px;
+    }
+
+    .brand {
+        font-size: 26px;
+    }
+
+    .info-content h1 {
+        font-size: 36px;
+    }
+
+    .info-content > p:last-child {
+        font-size: 15px;
+    }
+
+    .auth-form-container {
+        padding: 35px 22px;
+    }
+
+    .back-home {
+        margin-bottom: 35px;
+    }
+
+    .auth-form h2 {
+        font-size: 29px;
+    }
+}
+
+/* ===== SpendWise Login-Matching Button Theme ===== */
+button,
+.auth-button,
+.btn,
+button[type="submit"],
+button[type="button"],
+input[type="submit"] {
+    background: #182238 !important;
+    color: #ffffff !important;
+    border: 1px solid #182238 !important;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+button:hover,
+.auth-button:hover,
+.btn:hover,
+button[type="submit"]:hover,
+button[type="button"]:hover,
+input[type="submit"]:hover {
+    background: #111827 !important;
+    border-color: #b7791f !important;
+    color: #ffffff !important;
+}
+
+button:active,
+.auth-button:active,
+.btn:active,
+button[type="submit"]:active {
+    transform: translateY(1px);
+}
+
+/* Gold accents used on the login page */
+a {
+    color: #b7791f;
+}
+
+a:hover {
+    color: #8f5f16;
+}

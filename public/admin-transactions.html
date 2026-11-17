@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>SpendWise - Admin Transactions</title>
+
+    <link rel="stylesheet"
+          href="css/admin-transactions.css">
+
+</head>
+
+<body>
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            SpendWise
+        </div>
+
+        <p class="admin-label">
+            ADMIN PANEL
+        </p>
+
+        <nav>
+
+            <a href="admin-dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="admin-users.html">
+                Users
+            </a>
+
+            <a href="admin-transactions.html"
+               class="active">
+                Transactions
+            </a>
+
+        </nav>
+
+        <button id="logoutBtn"
+                class="logout-btn">
+            Logout
+        </button>
+
+    </aside>
+
+
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <h1>
+                Manage Transactions
+            </h1>
+
+            <p>
+                Monitor and manage SpendWise transactions
+            </p>
+
+        </header>
+
+
+        <section class="transactions-card">
+
+            <div class="card-header">
+
+                <h2>
+                    All Transactions
+                </h2>
+
+                <button id="refreshBtn"
+                        class="refresh-btn">
+                    Refresh
+                </button>
+
+            </div>
+
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>ID</th>
+                            <th>User</th>
+                            <th>Email</th>
+                            <th>Type</th>
+                            <th>Amount</th>
+                            <th>Category</th>
+                            <th>Payment</th>
+                            <th>Date</th>
+                            <th>Source</th>
+                            <th>Action</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="transactionsTableBody">
+
+                        <tr>
+
+                            <td colspan="10">
+                                Loading transactions...
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="js/admin-transactions.js"></script>
+
+</body>
+
+</html>

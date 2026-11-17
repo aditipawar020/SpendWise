@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>SpendWise - Manage Users</title>
+
+    <link rel="stylesheet"
+          href="css/admin-users.css">
+
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            SpendWise
+        </div>
+
+        <p class="admin-label">
+            ADMIN PANEL
+        </p>
+
+        <nav>
+
+            <a href="admin-dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="admin-users.html"
+               class="active">
+                Users
+            </a>
+
+            <a href="admin-transactions.html">
+                Transactions
+            </a>
+
+        </nav>
+
+        <button id="logoutBtn"
+                class="logout-btn">
+            Logout
+        </button>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <h1>
+                Manage Users
+            </h1>
+
+            <p>
+                Approve and manage SpendWise users
+            </p>
+
+        </header>
+
+
+        <!-- USER TABLE -->
+
+        <section class="users-card">
+
+            <div class="card-header">
+
+                <h2>
+                    Registered Users
+                </h2>
+
+                <button id="refreshBtn"
+                        class="refresh-btn">
+                    Refresh
+                </button>
+
+            </div>
+
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                ID
+                            </th>
+
+                            <th>
+                                Name
+                            </th>
+
+                            <th>
+                                Email
+                            </th>
+
+                            <th>
+                                User Type
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                            <th>
+                                Action
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="usersTableBody">
+
+                        <tr>
+
+                            <td colspan="6">
+                                Loading users...
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="js/admin-users.js"></script>
+
+</body>
+
+</html>
